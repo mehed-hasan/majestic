@@ -34,9 +34,6 @@
     $(".nav-search-wrapper button").removeClass("gold_button");
 
   });
-  $(".nav-link").click(function(){
-    $('.modal').modal('hide');
-  });
 
   // This is for controlling resizing modal 
   $(window).resize(function(){
@@ -45,13 +42,51 @@
         $(".mobile-menu-modal, .modal-backdrop").hide();
       }
     }
+    $(".nav-link").find("svg path, svg circle,  svg line, svg ellipse").css({
+        'stroke':'#003464'
+        });
+
   });
-// This is for controlling resizing modal ended
-$(".nav-item").click(function(){
-$(".nav-item ").find(".nav-link svg path, .nav-link svg circle, .nav-link svg line, .nav-link svg ellipse").css({
-'stroke':'#003464'
+// This is for controlling resizing modal ended------------------------------------------
+
+
+$(".modal").click(function(){
+    $(".nav-link").find("svg path, svg circle,  svg line, svg ellipse").css({
+        'stroke':'#003464'
+        });
+})
+$(".nav-link").click(function(){
+    $('.modal').modal('hide');
+
+
+    
+    if($(this).attr("class") === "nav-link visited"){
+        $(".nav-link").find("svg path, svg circle,  svg line, svg ellipse").css({
+            'stroke':'#003464'
+            });
+            $(this).removeClass("visited");
+
+
+    }else{
+        $(".nav-link").find("svg path, svg circle, svg line, svg ellipse").css({
+            'stroke':'#003464'
+            });
+            $(this).find("svg path,  svg circle, svg line, svg ellipse").css({
+            'stroke':'#c09451'
+            });
+            $(this).addClass("visited");
+
+    }
+
+
+
 });
-$(this).find(".nav-link svg path, .nav-link svg circle, .nav-link svg line, .nav-link svg ellipse").css({
-'stroke':'#c09451'
-});
-});
+
+
+$(".close").click(function(){
+    $(".nav-link  ").find("svg path,  svg circle,  svg line,  svg ellipse").css({
+        'stroke':'#003464'
+    });
+})
+
+
