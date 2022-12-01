@@ -3,7 +3,7 @@ body {
 }
 
 .bogo-hero {
-  background-image: url("../../../static/images/bogo/Scroll Group 2.png");
+  background-image: url("./static/images/bogo/Scroll Group 2.png");
   background-position: center;
   height: 450px;
   background-repeat: no-repeat;
